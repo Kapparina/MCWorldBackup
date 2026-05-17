@@ -42,7 +42,6 @@ func run(log *slog.Logger) error {
 	if loadErr := godotenv.Load(); loadErr != nil && !os.IsNotExist(loadErr) {
 		return fmt.Errorf("load .env: %w", loadErr)
 	}
-
 	cfg, configErr := loadConfig()
 	if configErr != nil {
 		return fmt.Errorf("load config: %w", configErr)
